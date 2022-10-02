@@ -1,0 +1,160 @@
+:root {
+  --color-main: #e38b29;
+  --color-secondary: #f1a661;
+  --color-tertiary: #ffd8a9;
+  --color-bg: #fdeedc;
+  --color-error: #f0521f;
+  --color-success: #40e35e;
+}
+
+@font-face {
+  font-family: Poppins-regular;
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: Inter-Medium;
+  src: url(../fonts/Inter-Medium.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter-Medium;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: Poppins-regular;
+}
+
+body {
+  background: var(--color-bg);
+}
+
+button {
+  cursor: pointer;
+}
+
+main {
+  height: 100%;
+  margin: 20px 0;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+table,
+td,
+tr,
+thead {
+  border: 1px solid black;
+}
+table {
+  width: 80%;
+  text-align: center;
+}
+td {
+  height: 25px;
+}
+
+textarea {
+  resize: none;
+  padding: 3px 7px;
+  width: 100%;
+}
+
+/* Class */
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-center-center-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.flex-center-center-column-reverse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+}
+.align-center {
+  align-items: center;
+}
+
+.border-radius-100 {
+  border-radius: 100%;
+}
+
+.modal {
+  position: fixed;
+
+  background-color: var(--color-main);
+  border: 2px solid black;
+  width: 50%;
+  height: 10%;
+  left: 25%;
+
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  background-color: var(--color-error);
+}
+
+.success {
+  background-color: var(--color-success);
+}
+
+.modal-result {
+  height: 25%;
+  top: 30%;
+}
+
+.modal-result button {
+  width: 40%;
+  height: 50px;
+  background-color: var(--color-bg);
+  border: none;
+  cursor: pointer;
+  margin: 20px 0;
+  font-size: 1.5rem;
+}
+.modal-result button:hover {
+  border: 2px solid black;
+  font-weight: bolder;
+}

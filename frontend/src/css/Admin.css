@@ -1,0 +1,8 @@
+.admin-menu {
+  width: 70%;
+  margin: 20px 0;
+}
+
+.selected {
+  text-decoration: underline;
+}

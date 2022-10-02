@@ -1,0 +1,30 @@
+.search-result {
+  cursor: pointer;
+  margin: 10px 0;
+  height: 170px;
+  width: 40%;
+  min-width: 400px;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-main);
+}
+.search-result img {
+  height: 70%;
+  border-radius: 100%;
+  margin: 0 5%;
+}
+
+.search-query h2 {
+  text-align: center;
+}
+
+.pagination-button {
+  cursor: pointer;
+  width: 50px;
+  height: 30px;
+  background-color: var(--color-secondary);
+  border: none;
+}
+.pagination-button:hover {
+  border: 1px solid black;
+}
