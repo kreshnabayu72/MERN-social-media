@@ -123,17 +123,6 @@ router.post("/login", upload.single(), async (req, res) => {
   }
 });
 
-router.put("/:id/setadmin", async (req, res) => {
-  try {
-    const user = await userModel.findOne({ _id: req.params.id });
-
-    const result = await userModel.updateOne(user, { isAdmin: true });
-    res.send(result);
-  } catch (error) {
-    res.send(error);
-  }
-});
-
 router.put("/:id", upload.single("profilePicture"), async (req, res) => {
   try {
     await userValidation.validateAsync(req.body);
