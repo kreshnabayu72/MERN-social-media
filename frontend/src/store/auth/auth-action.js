@@ -6,10 +6,13 @@ export const Login = (username, password) => {
   return async (dispatch) => {
     const signIn = async () => {
       dispatch(utilSlice.actions.sendRequest());
-      const result = await axios.post("/api/user/login", {
-        username,
-        password,
-      });
+      const result = await axios.post(
+        "https://project-sosmed-mern.herokuapp.com/api/user/login",
+        {
+          username,
+          password,
+        }
+      );
 
       await dispatch(utilSlice.actions.finishRequest());
 

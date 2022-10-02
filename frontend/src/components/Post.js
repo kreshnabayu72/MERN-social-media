@@ -23,9 +23,12 @@ function Post({ post }) {
 
   const LikeHandler = async () => {
     try {
-      const result = await axios.put(`/api/post/${post._id}/like`, {
-        userId: loggedUser._id,
-      });
+      const result = await axios.put(
+        `https://project-sosmed-mern.herokuapp.com/api/post/${post._id}/like`,
+        {
+          userId: loggedUser._id,
+        }
+      );
       nav(0);
     } catch (error) {
       console.log(error);

@@ -10,7 +10,11 @@ const ProfilePostsGallery = ({ userPosts }) => {
 
   return userPosts.map((post) => {
     return (
-      <img src={`/api/post/${post._id}/image`} alt="postImage" key={post._id} />
+      <img
+        src={`https://project-sosmed-mern.herokuapp.com/api/post/${post._id}/image`}
+        alt="postImage"
+        key={post._id}
+      />
     );
   });
 };
@@ -36,9 +40,12 @@ function ProfilePage() {
   const FollowHandler = async (e) => {
     try {
       dispatch(utilSlice.actions.sendRequest());
-      const result = await axios.put(`/api/user/${user._id}/follow`, {
-        userId: loggedUser._id,
-      });
+      const result = await axios.put(
+        `https://project-sosmed-mern.herokuapp.com/api/user/${user._id}/follow`,
+        {
+          userId: loggedUser._id,
+        }
+      );
       dispatch(
         utilSlice.actions.requestSuccess({
           success: { message: result.data.message },

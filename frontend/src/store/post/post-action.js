@@ -6,7 +6,9 @@ export const fetchPost = () => {
   return async (dispatch) => {
     const fetchData = async () => {
       dispatch(utilSlice.actions.sendRequest());
-      const result = await axios.get("/api/post");
+      const result = await axios.get(
+        "https://project-sosmed-mern.herokuapp.com/api/post"
+      );
       dispatch(utilSlice.actions.finishRequest());
       return result.data;
     };
@@ -22,9 +24,13 @@ export const fetchPost = () => {
 export const UploadPost = (postData) => {
   return async (dispatch) => {
     const register = async (data) => {
-      const result = await axios.post("/api/post", data, {
-        headers: { ContentType: "multipart/form-data" },
-      });
+      const result = await axios.post(
+        "https://project-sosmed-mern.herokuapp.com/api/post",
+        data,
+        {
+          headers: { ContentType: "multipart/form-data" },
+        }
+      );
 
       return result.data;
     };
@@ -51,7 +57,9 @@ export const UploadPost = (postData) => {
 export const DeletePost = (postId) => {
   return async (dispatch) => {
     const deletePost = async (postId) => {
-      const result = await axios.delete(`/api/post/${postId}`);
+      const result = await axios.delete(
+        `https://project-sosmed-mern.herokuapp.com/api/post/${postId}`
+      );
 
       return result.data;
     };

@@ -5,7 +5,9 @@ import axios from "axios";
 export const fetchUser = () => {
   return async (dispatch) => {
     const fetchData = async () => {
-      const result = await axios.get("/api/user");
+      const result = await axios.get(
+        "https://project-sosmed-mern.herokuapp.com/api/user"
+      );
       return result.data;
     };
     try {
@@ -23,9 +25,13 @@ export const fetchUser = () => {
 export const Register = (userData) => {
   return async (dispatch) => {
     const register = async (data) => {
-      const result = await axios.post("/api/user", data, {
-        headers: { ContentType: "multipart/form-data" },
-      });
+      const result = await axios.post(
+        "https://project-sosmed-mern.herokuapp.com/api/user",
+        data,
+        {
+          headers: { ContentType: "multipart/form-data" },
+        }
+      );
 
       return result;
     };
@@ -51,9 +57,13 @@ export const Register = (userData) => {
 export const Edit = (id, newUserData) => {
   return async (dispatch) => {
     const register = async (data) => {
-      const result = await axios.put(`/api/user/${id}`, data, {
-        headers: { ContentType: "multipart/form-data" },
-      });
+      const result = await axios.put(
+        `https://project-sosmed-mern.herokuapp.com/api/user/${id}`,
+        data,
+        {
+          headers: { ContentType: "multipart/form-data" },
+        }
+      );
 
       return result;
     };
@@ -81,7 +91,9 @@ export const Edit = (id, newUserData) => {
 export const DeleteUser = (userId) => {
   return async (dispatch) => {
     const deleteUser = async (userId) => {
-      const result = await axios.delete(`/api/user/${userId}`);
+      const result = await axios.delete(
+        `https://project-sosmed-mern.herokuapp.com/api/user/${userId}`
+      );
 
       return result.data;
     };
